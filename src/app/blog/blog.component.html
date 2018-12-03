@@ -1,0 +1,9 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getColor()=== 'green',
+                'list-group-item-danger': getColor()=== 'red'}">
+    <div align="right" >{{ postCreated_at | date: 'dd/MM/yyyy HH:mm a' }}</div>
+    <h1 [ngStyle]="{color: getColor()}">{{postTitle}}</h1>
+    <p [ngStyle]="{color: getColor()}">{{postContent}}</p>
+    <button class="btn btn-success" (click)="onLike()">{{ likeText }} </button>
+    <button class="btn btn-danger" (click)="onDisLike()">{{ disLikeText }} </button>
+</li>
